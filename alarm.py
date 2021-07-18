@@ -30,12 +30,10 @@ def ping_endpoint(url='http://www.google.co.in'):
     try:
         r = requests.get(url, timeout=1)
         if r.ok:
-            print('-- connection fine')
-    except TimeoutError as timeout:
-        print(timeout)
-        raise_blocking_alarm()
+            print('{} -- connection fine'.format(time.time()))
     except BaseException as error:
         print(error)
+        raise_blocking_alarm()
 
 
 def ping_loop():
