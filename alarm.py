@@ -18,12 +18,10 @@ def beep(secs, freq=440):
 
 def raise_blocking_alarm():
     freq = 440
-    while True:
+    for i in range(6):
         beep(0.2, freq=freq)
         time.sleep(0.4)
         freq += 2
-        if freq > 460:
-            freq = 440
 
 
 def ping_endpoint(url='http://www.google.co.in'):
